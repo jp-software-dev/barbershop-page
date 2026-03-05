@@ -615,7 +615,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     display: inline;
 }
 
-/* ===== TIENDA - BUSCADOR CON LUPA SUBIDA ===== */
+/* ===== TIENDA - BUSCADOR CON LUPA CENTRADA (solo escritorio) ===== */
 .search-container {
     flex: 0 1 500px;
     margin: 0 auto;
@@ -646,6 +646,10 @@ body.bg-light .whatsapp-float { display: none !important; }
     transform: translateY(-50%);
     color: var(--gray-medium);
     transition: color var(--transition);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
 }
 
 .search-container input:focus + i { 
@@ -1092,6 +1096,13 @@ body.bg-light .whatsapp-float { display: none !important; }
     text-align: center;
 }
 
+/* ===== RESET DE LISTAS PARA EL MENÚ (ELIMINA PUNTOS) ===== */
+.nav-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 /* ===== PC: ALINEACIÓN TOTAL DEL HEADER ===== */
 @media (min-width: 769px) {
     .header-container {
@@ -1387,26 +1398,17 @@ body.bg-light .whatsapp-float { display: none !important; }
         max-width: 100%;
     }
     
+    /* INPUT SIN LUPA (padding normal) */
     .search-container input {
-        padding: 8px 12px 8px 35px;
+        padding: 8px 12px;
         font-size: 0.85rem;
         height: 38px;
         width: 100%;
     }
-    
-    /* LUPA CENTRADA EN MÓVIL */
+
+    /* OCULTAR LA LUPA EN MÓVIL */
     .search-container i {
-        position: absolute;
-        left: 12px;
-        top: 50%; /* Centrado exacto */
-        transform: translateY(-50%);
-        font-size: 0.9rem;
-        color: var(--gray-medium);
-        transition: color var(--transition);
-    }
-    
-    .search-container input:focus + i { 
-        color: var(--black); 
+        display: none;
     }
     
     .menu-toggle {
@@ -1439,7 +1441,11 @@ body.bg-light .whatsapp-float { display: none !important; }
     }
     .nav-menu.active { right: 0 !important; }
     
+    /* Aseguramos que la lista no tenga puntos en móvil */
     .nav-menu .nav-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
         display: flex !important;
         flex-direction: column;
         gap: 5px;
@@ -1451,19 +1457,20 @@ body.bg-light .whatsapp-float { display: none !important; }
         margin: 0;
     }
     
+    /* BOTONES MÓVIL MÁS ALTOS Y CON BORDE INFERIOR */
     .nav-menu .nav-list li a {
         display: flex;
         align-items: center;
-        gap: 10px;
-        padding: 8px 12px;
-        font-size: 0.8rem;
+        gap: 15px;
+        padding: 18px 15px;
+        font-size: 0.95rem;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         text-decoration: none;
         color: var(--black-mate);
         background: transparent;
-        border: none;
+        border-bottom: 1px solid var(--gray-border);
         border-radius: 4px;
         transition: all 0.2s ease;
         width: 100%;
@@ -1566,13 +1573,13 @@ body.bg-light .whatsapp-float { display: none !important; }
     
     /* PRODUCTOS 1 EN 1 (MÓVIL) */
     .product-grid {
-        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-columns: 1fr;
         gap: 25px;
         padding: 15px;
     }
     
     .product-image-box {
-        height: 300px; /* Un poco más alto para que luzca bien en 1 columna */
+        height: 300px;
     }
     
     .product-details {
@@ -1620,8 +1627,17 @@ body.bg-light .whatsapp-float { display: none !important; }
         gap: 4px;
     }
     
-    /* Panel Admin - Ajustes móvil */
+    /* Panel Admin - Ajustes móvil (correcciones de espaciado) */
+    .admin-panel .header-container {
+        padding: 0 20px !important;
+    }
+    
     .admin-panel .admin-logo {
+        display: none;
+    }
+    
+    /* OCULTA EL TEXTO "BARBERADMIN" EN MÓVIL */
+    .admin-panel .logo {
         display: none;
     }
     
@@ -1646,8 +1662,9 @@ body.bg-light .whatsapp-float { display: none !important; }
         grid-column: 3;
         grid-row: 1;
         display: flex;
-        gap: 5px;
+        gap: 10px;
         align-items: center;
+        margin-right: 15px;
     }
     
     .admin-panel .admin-user-badge span {
