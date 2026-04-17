@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Barber Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-bar">BARBER</span><span class="logo-drinks" style="color: #333;">SHOP</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> INICIO</a></li>
+                    <li><a href="servicios.html"><i class="fas fa-cut"></i> SERVICIOS</a></li>
+                    <li><a href="ubicacion.html"><i class="fas fa-map-marker-alt"></i> UBICACIÓN</a></li>
+                    <li><a href="contacto.html" class="active"><i class="fas fa-envelope"></i> CONTACTO</a></li>
+                    <li><a href="https://calendar.app.google/ysaZC8uKMBFZfemN9" target="_blank" style="color: #1a73e8; font-weight: 700;">AGENDAR CITA</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tienda.html" class="btn-header"><i class="fas fa-store"></i> TIENDA</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main style="padding-top: 100px; min-height: 80vh;">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Habla con los <span class="highlight">Expertos</span></h2>
+                </div>
+                
+                <div class="split-container" style="gap: 50px;">
+                    <div class="split-text">
+                        <div class="stat-card" style="text-align: left; padding: 30px;">
+                            <form action="#">
+                                <div style="margin-bottom: 15px;">
+                                    <label>Nombre Completo</label>
+                                    <input type="text" class="input-style" required placeholder="Tu nombre">
+                                </div>
+                                <div style="margin-bottom: 15px;">
+                                    <label>Correo Electrónico</label>
+                                    <input type="email" class="input-style" required 
+                                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                                           title="Por favor, introduce un correo válido con @" 
+                                           placeholder="ejemplo@gmail.com">
+                                </div>
+                                <div style="margin-bottom: 20px;">
+                                    <label>Mensaje (Máx. 200 caracteres)</label>
+                                    <textarea class="input-style" rows="4" required maxlength="200" 
+                                              placeholder="Escribe tu consulta aquí..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width:100%">ENVIAR MENSAJE</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="split-text">
+                        <div class="info-card">
+                            <i class="fas fa-phone"></i>
+                            <div class="info-detalles">
+                                <h4>Teléfono</h4>
+                                <p>+52 7299 63 5417</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info-detalles">
+                                <h4>Email</h4>
+                                <p>barberstyledrinks@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <i class="fas fa-calendar-check"></i>
+                            <div class="info-detalles">
+                                <h4>Reservaciones</h4>
+                                <p>Atención con cita previa para garantizar tu espacio.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="redes-sociales" style="margin-top: 20px;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer-final">
+        <div class="container">
+            <p>© 2026 Barber Shop. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

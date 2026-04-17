@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación | Barber Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-bar">BARBER</span><span class="logo-drinks" style="color: #333;">SHOP</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> INICIO</a></li>
+                    <li><a href="servicios.html"><i class="fas fa-cut"></i> SERVICIOS</a></li>
+                    <li><a href="ubicacion.html" class="active"><i class="fas fa-map-marker-alt"></i> UBICACIÓN</a></li>
+                    <li><a href="contacto.html"><i class="fas fa-envelope"></i> CONTACTO</a></li>
+                    <li><a href="https://calendar.app.google/ysaZC8uKMBFZfemN9" target="_blank" style="color: #1a73e8; font-weight: 700;">AGENDAR CITA</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tienda.html" class="btn-header"><i class="fas fa-store"></i> TIENDA</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main style="padding-top: 100px; min-height: 80vh;">
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nuestra <span class="highlight">Ubicación</span></h2>
+                </div>
+                <div class="ubicacion-grid">
+                    <div class="mapa-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.2345!2d-99.6123!3d19.1234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA3JzI0LjIiTiA5OcKwMzYnNDQuMyJX!5e0!3m2!1ses!2smx!4v1620000000000!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="ubicacion-info">
+                        <div class="info-card"><i class="fas fa-map-pin"></i><div class="info-detalles"><h4>Dirección</h4><p>Zaragoza de Guadalupe, Calimaya.</p></div></div>
+                        <div class="info-card"><i class="fas fa-clock"></i><div class="info-detalles"><h4>Horario</h4><p>Lunes - Viernes: 10AM - 9PM</p><p>Sábado: 10AM - 6PM</p></div></div>
+                        <div class="info-card"><i class="fas fa-parking"></i><div class="info-detalles"><h4>Estacionamiento</h4><p>Contamos con estacionamiento exclusivo para clientes.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-final">
+        <div class="container">
+            <p>© 2026 Barber Shop. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

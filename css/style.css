@@ -1943,3 +1943,193 @@ body.bg-light .whatsapp-float { display: none !important; }
     top: 30px;
     left: 30px;
 }
+
+/* ===== NUEVOS ESTILOS: LAYOUT, LOGO, TARJETAS Y FORMULARIO ===== */
+/* Agregados para asegurar el footer abajo, logo "SHOP" oscuro, tarjetas mejoradas y formulario elegante */
+
+main {
+    min-height: 80vh; /* Empuja el footer hacia abajo en páginas cortas (ej. Contacto) */
+}
+
+.logo-drinks {
+    color: #333333; /* Color oscuro para "SHOP" como pediste */
+    font-weight: 800;
+}
+
+/* Tarjetas de estadísticas (Inicio) y también aplica a contenedores similares */
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Tarjetas de información (Ubicación y Contacto) */
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #eeeeee;
+}
+
+.info-card i {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-top: 5px;
+}
+
+.info-detalles h4 {
+    margin-bottom: 5px;
+    color: #111111;
+    font-weight: 600;
+}
+
+.info-detalles p {
+    margin: 0;
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+/* Estilos para inputs del formulario de contacto */
+.input-style {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: #ffffff;
+}
+
+.input-style:focus {
+    border-color: #000000;
+    outline: none;
+}
+
+textarea.input-style {
+    resize: vertical;
+}
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    margin-top: 20px;
+}
+.hero-stats {
+            display: flex !important;         
+            flex-wrap: wrap;
+            justify-content: center;           
+            gap: 30px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .hero-stats .stat-card {
+            flex: 0 1 280px;                
+            max-width: 320px;
+            text-align: center;
+            background: #ffffff;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-stats .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+        }
+
+        .hero-stats .stat-card i {
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .hero-stats .stat-card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .hero-stats .stat-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 20px;
+            }
+            .hero-stats .stat-card {
+                flex: 0 1 100%;
+                max-width: 350px;
+            }
+        }
+
+         .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        /* El buscador ocupa el espacio central y se centra */
+        .search-container {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Ajuste para que el logo y el botón menú no se muevan */
+        .header-container .logo {
+            flex-shrink: 0;
+            margin-right: 0;
+        }
+
+        .menu-toggle {
+            flex-shrink: 0;
+        }
+
+        /* En móviles el buscador ocupa todo el ancho disponible */
+        @media (max-width: 768px) {
+            .header-container {
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                gap: 8px;
+            }
+            .search-container {
+                margin: 0;
+                max-width: 100%;
+            }
+        }

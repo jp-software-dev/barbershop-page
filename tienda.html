@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda | Barber & Drinks</title>
+    <title>Tienda | Barber Shop</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,120 +13,99 @@
         <div class="container header-container">
             <a href="index.html" class="back-link" title="Volver al inicio">
                 <i class="fas fa-arrow-left"></i>
-                <span>Volver al inicio</span>
             </a>
-           
+            
+            <div class="logo">
+                <span class="logo-bar">BARBER</span><span class="logo-drinks" style="color: #333;">SHOP</span>
+            </div>
+
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Buscar producto..." aria-label="Buscar productos">
                 <i class="fas fa-search"></i>
             </div>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
             </button>
         </div>
 
-        <nav class="nav-menu tienda-menu" id="navMenu" aria-label="Menú móvil">
+        <nav class="nav-menu tienda-menu" id="navMenu">
             <ul class="nav-list">
                 <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
                 <li><a href="tienda.html" class="active"><i class="fas fa-store"></i> Tienda</a></li>
+                <li><a href="https://calendar.app.google/ysaZC8uKMBFZfemN9" target="_blank" style="color: #1a73e8; font-weight: 700;">AGENDAR CITA</a></li>
             </ul>
         </nav>
     </header>
 
     <a href="https://wa.me/527299635417?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos."
-       class="whatsapp-float"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Contactar por WhatsApp">
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-tooltip">¡Compra por WhatsApp!</span>
     </a>
 
     <main class="container">
-        <div class="filter-pills" role="tablist" aria-label="Filtros de productos">
-            <button class="pill active" data-filter="todo" onclick="renderProductos('todo')" role="tab" aria-selected="true">TODO</button>
-            <button class="pill" data-filter="grooming" onclick="renderProductos('grooming')" role="tab" aria-selected="false">PRODUCTOS</button>
-            <button class="pill" data-filter="perfumes" onclick="renderProductos('perfumes')" role="tab" aria-selected="false">PERFUMES</button>
-            <button class="pill" data-filter="ropa" onclick="renderProductos('ropa')" role="tab" aria-selected="false">ROPA</button>
+        <div class="filter-pills" role="tablist">
+            <button class="pill active" data-filter="todo" onclick="renderProductos('todo')">TODO</button>
+            <button class="pill" data-filter="grooming" onclick="renderProductos('grooming')">PRODUCTOS</button>
+            <button class="pill" data-filter="perfumes" onclick="renderProductos('perfumes')">PERFUMES</button>
+            <button class="pill" data-filter="ropa" onclick="renderProductos('ropa')">ROPA</button>
         </div>
-        <div id="productGrid" class="product-grid" aria-label="Lista de productos"></div>
+        <div id="productGrid" class="product-grid"></div>
     </main>
 
-   
-    <div id="productModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-overlay" tabindex="-1"></div>
+    <div id="productModal" class="modal" role="dialog" aria-modal="true">
+        <div class="modal-overlay"></div>
         <div class="modal-container">
-            <button class="modal-close" id="closeModalBtn" aria-label="Cerrar modal">
-                <i class="fas fa-times"></i>
-            </button>
-           
-            <div class="modal-image-area" id="modalImageArea" role="region" aria-label="Galería de imágenes">
-          
-            </div>
-           
+            <button class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></button>
+            <div class="modal-image-area" id="modalImageArea"></div>
             <div class="modal-details">
                 <h2 id="modalTitle"></h2>
                 <div class="modal-price" id="modalPrice"></div>
-               
                 <div class="stock-indicator" id="stockIndicator">
                     <span class="stock-badge" id="stockBadge"></span>
                     <span class="stock-text" id="stockText"></span>
                 </div>
-               
                 <div id="talla-section" class="talla-container" style="display: none;">
-                    <span class="talla-label">
-                        <i class="fas fa-ruler"></i> SELECCIONA TU TALLA:
-                        <span id="tallas-disponibles-info" class="talla-stock-badge">0 DISPONIBLES</span>
-                    </span>
-                    <div class="talla-grid" id="talla-botones" role="group" aria-label="Selector de tallas"></div>
-                    <div id="talla-error" class="talla-error" style="display: none;" role="alert">
-                        Por favor selecciona una talla antes de cotizar.
-                    </div>
+                    <span class="talla-label"><i class="fas fa-ruler"></i> SELECCIONA TU TALLA:</span>
+                    <div class="talla-grid" id="talla-botones"></div>
                 </div>
-               
                 <div class="modal-description">
                     <h4>Detalles</h4>
                     <ul id="modalFeatures"></ul>
                 </div>
-               
-                <button class="btn-whatsapp-product" id="btnWhatsappModal" aria-label="Cotizar por WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>COTIZAR POR WHATSAPP</span>
+                <button class="btn-whatsapp-product" id="btnWhatsappModal">
+                    <i class="fab fa-whatsapp"></i> <span>COTIZAR POR WHATSAPP</span>
                 </button>
             </div>
         </div>
     </div>
 
-    <div id="imageViewer" class="image-viewer" role="dialog" aria-modal="true" aria-label="Visor de imagen completa">
-        <button class="image-viewer-close" id="imageViewerClose" aria-label="Cerrar visor">
-            <i class="fas fa-times"></i>
-        </button>
-        <button class="image-viewer-nav prev" id="viewerPrevBtn" aria-label="Imagen anterior">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="image-viewer-container" role="region" aria-label="Galería de imágenes">
+    <div id="imageViewer" class="image-viewer">
+        <button class="image-viewer-close" id="imageViewerClose"><i class="fas fa-times"></i></button>
+        <button class="image-viewer-nav prev" id="viewerPrevBtn"><i class="fas fa-chevron-left"></i></button>
+        <div class="image-viewer-container">
             <div id="imageViewerCounter" class="image-viewer-counter"></div>
         </div>
-        <button class="image-viewer-nav next" id="viewerNextBtn" aria-label="Siguiente imagen">
-            <i class="fas fa-chevron-right"></i>
-        </button>
+        <button class="image-viewer-nav next" id="viewerNextBtn"><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <footer class="footer-final">
         <div class="container">
-            <p>© 2026 Barber & Drinks. Todos los derechos reservados.</p>
-            <p class="footer-legal" role="button" tabindex="0" aria-label="Aviso de Privacidad">Aviso de Privacidad</p>
-            <a href="admin-login.html" class="btn-admin-footer" aria-label="Panel de administración">
-                <i class="fas fa-lock"></i>
-            </a>
-        </div>
+            <p>© 2026 Barber Shop. Todos los derechos reservados.</p>
+            </div>
     </footer>
 
     <script src="js/productos.js"></script>
     <script src="js/lightbox.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.shiftKey && event.key === 'L') {
+                window.location.href = 'admin-login.html';
+            }
+        });
+    </script>
 </body>
 </html>
