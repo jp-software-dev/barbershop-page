@@ -24,4 +24,4 @@ Follow these steps to deploy the project locally:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/jp-software-dev/barbershop-page.git](https://github.com/jp-software-dev/barbershop-page.git)
+   git clone https://github.com/jp-software-dev/barbershop-page.git
