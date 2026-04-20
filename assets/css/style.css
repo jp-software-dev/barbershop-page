@@ -1,5 +1,4 @@
-/* ===== VARIABLES GLOBALES Y RESET ===== */
-/* Define los colores base, sombras y transiciones de todo el sitio. También resetea los márgenes del navegador y establece la fuente principal y animaciones de carga para las secciones. */
+/* VARIABLES: Global design tokens and reset */
 :root {
     --white: #FFFFFF;
     --black: #000000;
@@ -20,12 +19,14 @@
     --tiktok: linear-gradient(45deg, #00f2ea, #ff0050);
 }
 
+/* RESET: Remove default browser margins and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BASE: Global body typography and background */
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--white);
@@ -33,16 +34,19 @@ body {
     line-height: 1.5;
 }
 
+/* UTILITY: Light background variant for store pages */
 body.bg-light {
     background-color: var(--gray-light);
 }
 
+/* LAYOUT: Responsive container with max width */
 .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
+/* ANIMATION: Fade-in effect for all sections */
 section {
     opacity: 0;
     transform: translateY(20px);
@@ -56,8 +60,7 @@ section {
     }
 }
 
-/* ===== HEADER BASE ===== */
-/* Controla la barra de navegación superior fija, alineando el logo, el botón de cita y ocultando el menú hamburguesa que solo se activará en vista móvil. */
+/* HEADER: Fixed navigation bar styling */
 .header {
     position: fixed;
     top: 0;
@@ -70,6 +73,7 @@ section {
     overflow: visible !important;
 }
 
+/* BRANDING: Logo text styling */
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -81,6 +85,7 @@ section {
 .logo-bar { color: var(--black); }
 .logo-drinks { color: var(--black); font-weight: 400; }
 
+/* HEADER: Shop button in navigation */
 .btn-header {
     background-color: var(--black);
     color: var(--white);
@@ -103,6 +108,7 @@ section {
     color: var(--black);
 }
 
+/* MOBILE: Hamburger menu button (hidden on desktop) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -124,8 +130,7 @@ section {
     transition: var(--transition);
 }
 
-/* ===== BOTÓN WHATSAPP FLOTANTE ===== */
-/* Estiliza el botón de contacto en la esquina inferior derecha, aplicando una animación de pulsación constante y mostrando un texto emergente al pasar el mouse por encima. */
+/* WHATSAPP: Floating action button with pulse animation */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -162,6 +167,7 @@ section {
     animation: none;
 }
 
+/* WHATSAPP: Tooltip text on hover */
 .whatsapp-tooltip {
     position: absolute;
     right: 80px;
@@ -184,10 +190,10 @@ section {
     right: 90px;
 }
 
+/* UTILITY: Hide WhatsApp on light background pages */
 body.bg-light .whatsapp-float { display: none !important; }
 
-/* ===== HERO Y ESTADÍSTICAS ===== */
-/* Da formato a la sección principal de bienvenida con imagen de fondo oscura. Incluye el diseño de los textos grandes, los botones principales y el bloque de tarjetas numéricas. */
+/* HERO: Main landing section with background image */
 .hero {
     position: relative;
     padding: 140px 0 80px;
@@ -253,6 +259,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     max-width: 500px;
 }
 
+/* BUTTONS: Primary and outline variants */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -293,6 +300,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     color: var(--white);
 }
 
+/* BUTTON: Google Calendar specific styling */
 .btn-primary[style*="background-color: #1a73e8"] {
     background-color: #1a73e8 !important;
     border-color: #1a73e8 !important;
@@ -306,6 +314,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     color: #1a73e8 !important;
 }
 
+/* CARDS: Shared hover effect for all card types */
 .stat-card,
 .info-card,
 .product-card,
@@ -325,6 +334,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     border-color: var(--black) !important;
 }
 
+/* HERO: Statistics cards grid */
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -356,8 +366,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     line-height: 1.4;
 }
 
-/* ===== SERVICIOS, UBICACIÓN Y FOOTER ===== */
-/* Organiza el listado de precios interactivos, el contenedor curvo de Google Maps, las tarjetas de horarios y la estructura a tres columnas del pie de página con sus enlaces legales y botón de admin. */
+/* SERVICES: Interactive price list styling */
 .section { padding: 80px 0; }
 .section-header { text-align: center; margin-bottom: 48px; }
 .section-title {
@@ -424,6 +433,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     object-fit: cover;
 }
 
+/* LOCATION: Map and info cards layout */
 .ubicacion-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -476,6 +486,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     display: inline-block;
 }
 
+/* CONTACT: Final contact section with social links */
 .contacto-final {
     padding: 60px 0;
     background-color: var(--gray-light);
@@ -505,6 +516,7 @@ body.bg-light .whatsapp-float { display: none !important; }
 .contacto-lista li { display: flex; align-items: center; gap: 10px; }
 .contacto-lista i { width: 20px; color: var(--black); }
 
+/* SOCIAL: Animated social media icons */
 .redes-sociales { display: flex; gap: 15px; margin-top: 20px; }
 .redes-sociales a {
     width: 48px;
@@ -526,6 +538,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     border: 1px solid var(--black);
 }
 
+/* FOOTER: Main footer with admin button */
 .footer-final {
     background-color: var(--white);
     padding: 20px 0 15px;
@@ -593,6 +606,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     transform: translateY(-2px);
 }
 
+/* NAVIGATION: Back link styling */
 .back-link {
     display: flex;
     align-items: center;
@@ -612,8 +626,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     display: inline;
 }
 
-/* ===== TIENDA: BUSCADOR Y FILTROS ===== */
-/* Estilos del cuadro de búsqueda con icono central, además de la barra de botones (píldoras) usados para filtrar la tienda según categorías. */
+/* STORE: Search bar with centered icon */
 .search-container {
     flex: 0 1 500px;
     margin: 0 auto;
@@ -654,6 +667,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     color: var(--black); 
 }
 
+/* STORE: Category filter pills */
 .filter-pills {
     display: flex;
     gap: 10px;
@@ -687,8 +701,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     box-shadow: var(--shadow-sm);
 }
 
-/* ===== PRODUCTOS EN TIENDA ===== */
-/* Diseño de las tarjetas individuales de artículos estilo tienda en línea. Crea la cuadrícula adaptable, centra las fotos y formatea los precios y etiquetas descriptivas. */
+/* PRODUCTS: Store grid and cards */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -775,8 +788,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     grid-column: 1 / -1;
 }
 
-/* ===== MODAL DE PRODUCTOS Y VISOR ===== */
-/* Controla la apariencia de la ventana emergente al abrir un artículo, el área lateral de fotos deslizables, los botones selectores de tallas, los mensajes de inventario y el visor oscuro de fotos en pantalla completa. */
+/* MODAL: Product detail popup and image viewer */
 .modal {
     display: none;
     position: fixed;
@@ -886,6 +898,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     margin-right: 5px;
 }
 
+/* MODAL: WhatsApp purchase button */
 .btn-whatsapp-product {
     background-color: #000 !important;
     color: #fff !important;
@@ -910,6 +923,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     color: #000 !important;
 }
 
+/* MODAL: Size selector for clothing items */
 .talla-container {
     margin: 20px 0 25px 0;
     text-align: left;
@@ -984,6 +998,7 @@ body.bg-light .whatsapp-float { display: none !important; }
 }
 .modal-description li i { color: var(--gray-medium); }
 
+/* VIEWER: Fullscreen image gallery */
 .image-viewer {
     display: none;
     position: fixed;
@@ -1093,8 +1108,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     text-align: center;
 }
 
-/* ===== ADAPTACIÓN A PANTALLAS GRANDES Y MEDIANAS ===== */
-/* Reconfigura el header en monitores para mostrar el menú horizontal, ocultar el botón hamburguesa y reorganizar el grid, además de alejar los botones de cierre del visor para evitar clics erróneos. */
+/* DESKTOP: Horizontal navigation menu (min-width 769px) */
 .nav-list {
     list-style: none !important;
     padding: 0 !important;
@@ -1178,6 +1192,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     .tienda-menu { display: none !important; }
 }
 
+/* DESKTOP: Admin panel specific header layout */
 @media (min-width: 769px) {
     .admin-panel .header-container {
         display: grid;
@@ -1199,6 +1214,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     }
 }
 
+/* DESKTOP: Larger screens counter positioning */
 @media (min-width: 1025px) {
     .modal-image-counter, .image-viewer-counter {
         top: 30px !important;
@@ -1213,8 +1229,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     }
 }
 
-/* ===== ADAPTACIÓN A MÓVILES (HASTA 1024PX) ===== */
-/* Compacta el modal convirtiéndolo en una columna, reduce botones e imágenes y **mueve el contador de fotos a la derecha** para que no choque con la flecha de regresar. */
+/* TABLET: Modal adjustments up to 1024px */
 @media (max-width: 1024px) {
     .modal-nav, .image-viewer-nav {
         display: none !important;
@@ -1259,7 +1274,7 @@ body.bg-light .whatsapp-float { display: none !important; }
         object-fit: contain;
     }
 
-    /* AQUÍ SE APLICA TU CORRECCIÓN: Contador movido a la derecha */
+    /* TABLET: Counter moved to right side */
     .modal-image-counter {
         top: 10px !important;
         right: 10px !important;
@@ -1270,7 +1285,6 @@ body.bg-light .whatsapp-float { display: none !important; }
         min-width: 30px;
     }
     
-    /* AQUÍ SE APLICA TU CORRECCIÓN: Contador del visor movido a la derecha */
     .image-viewer-counter {
         top: 10px !important;
         right: 10px !important;
@@ -1357,8 +1371,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     }
 }
 
-/* ===== ADAPTACIÓN A TELÉFONOS (< 768px) ===== */
-/* Estructura la experiencia final de smartphone, reajustando la cuadrícula de productos a 1 sola columna, achicando inputs del buscador, modificando las tarjetas del panel admin y ajustando márgenes. */
+/* MOBILE: Phone-specific styles up to 768px */
 @media (max-width: 768px) {
     .header-container {
         display: grid;
@@ -1424,6 +1437,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     
     .header-actions { display: none !important; }
     
+    /* MOBILE: Slide-out navigation menu */
     .nav-menu {
         display: flex !important;
         position: fixed;
@@ -1514,6 +1528,7 @@ body.bg-light .whatsapp-float { display: none !important; }
         color: #1a73e8;
     }
     
+    /* MOBILE: Hero section adjustments */
     .hero-content { 
         grid-template-columns: 1fr; 
         text-align: center; 
@@ -1623,6 +1638,7 @@ body.bg-light .whatsapp-float { display: none !important; }
         gap: 4px;
     }
     
+    /* MOBILE: Admin panel specific overrides */
     .admin-panel .header-container {
         padding: 0 20px !important;
     }
@@ -1687,8 +1703,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     }
 }
 
-/* ===== PANEL DE ADMINISTRACIÓN ===== */
-/* Crea la interfaz de administración: padings superiores para el header fijo, el diseño de la insignia de usuario y los contadores estadísticos en forma de píldora. */
+/* ADMIN: Panel header and statistics */
 .admin-panel { padding-top: 120px; min-height: 100vh; }
 
 .admin-header { 
@@ -1773,8 +1788,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     font-size: 0.9rem;
 }
 
-/* ===== FORMULARIO DE ADMINISTRACIÓN ===== */
-/* Estiliza los campos de registro de productos en admin, dándole borde curvo a los inputs, creando la caja de previsualización de imágenes subidas y los botones de acción como Guardar o Borrar. */
+/* ADMIN: Product form styling */
 .admin-form-container { 
     background: white; 
     padding: 40px; 
@@ -1840,8 +1854,7 @@ body.bg-light .whatsapp-float { display: none !important; }
     color: black;
 }
 
-/* ===== PÁGINA DE LOGIN ADMINISTRATIVO ===== */
-/* Pule la vista de la tarjeta de inicio de sesión centrándola en la pantalla. Genera los campos con iconos interiores y el botón del "ojito" para ocultar o revelar contraseñas antes de entrar. */
+/* ADMIN LOGIN: Centered card with password toggle */
 .login-container { 
     min-height: 100vh; 
     display: flex; 
@@ -1944,192 +1957,206 @@ body.bg-light .whatsapp-float { display: none !important; }
     left: 30px;
 }
 
-/* ===== NUEVOS ESTILOS: LAYOUT, LOGO, TARJETAS Y FORMULARIO ===== */
-/* Agregados para asegurar el footer abajo, logo "SHOP" oscuro, tarjetas mejoradas y formulario elegante */
-
+/* UTILITY: Push footer down on short pages */
 main {
-    min-height: 80vh; /* Empuja el footer hacia abajo en páginas cortas (ej. Contacto) */
+    min-height: 80vh;
 }
 
+/* BRANDING: Dark shop logo variant */
 .logo-drinks {
-    color: #333333; /* Color oscuro para "SHOP" como pediste */
+    color: #333333;
     font-weight: 800;
 }
 
-/* Tarjetas de estadísticas (Inicio) y también aplica a contenedores similares */
+/* HERO: Responsive stats grid */
 .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
+    display: flex !important;         
+    flex-wrap: wrap;
+    justify-content: center;           
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-.stat-card {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+.hero-stats .stat-card {
+    flex: 0 1 280px;                
+    max-width: 320px;
     text-align: center;
-    transition: transform 0.3s ease;
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.stat-card:hover {
-    transform: translateY(-5px);
+.hero-stats .stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
 }
 
-.stat-card i {
+.hero-stats .stat-card i {
     font-size: 2rem;
-    color: #000000;
+    color: #000;
     margin-bottom: 15px;
 }
 
-/* Tarjetas de información (Ubicación y Contacto) */
-.info-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #eeeeee;
+.hero-stats .stat-card h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #111;
 }
 
-.info-card i {
-    font-size: 1.5rem;
-    color: #000000;
-    margin-top: 5px;
-}
-
-.info-detalles h4 {
-    margin-bottom: 5px;
-    color: #111111;
-    font-weight: 600;
-}
-
-.info-detalles p {
-    margin: 0;
-    color: #555555;
+.hero-stats .stat-card p {
     font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
 }
 
-/* Estilos para inputs del formulario de contacto */
+/* HEADER: Desktop flex layout */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.search-container {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header-container .logo {
+    flex-shrink: 0;
+    margin-right: 0;
+}
+
+.menu-toggle {
+    flex-shrink: 0;
+}
+
+/* MOBILE: Search bar full width on phones */
+@media (max-width: 768px) {
+    .hero-stats {
+        gap: 20px;
+    }
+    .hero-stats .stat-card {
+        flex: 0 1 100%;
+        max-width: 350px;
+    }
+    
+    .header-container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 8px;
+    }
+    .search-container {
+        margin: 0;
+        max-width: 100%;
+    }
+}
+/* CONTACT BUTTONS: Black by default, white on hover (NO ANIMATION) */
+.contact-btn-wa,
+.contact-btn-email,
+.contact-btn-calendar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 10px;
+    background: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-btn-wa:hover,
+.contact-btn-email:hover,
+.contact-btn-calendar:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* FORM SUBMIT BUTTON: Same behavior */
+.btn-primary.contact-submit {
+    background: #000000;
+    color: white;
+}
+
+.btn-primary.contact-submit:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* SOCIAL BUTTONS: WITH ANIMATION ONLY */
+.redes-sociales a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    background: #000000;
+}
+
+.redes-sociales a:nth-child(1):hover {
+    background: #1877F2;
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+.redes-sociales a:nth-child(2):hover {
+    background: linear-gradient(45deg, #f09433, #d62976, #962fbf, #4f5bd5);
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: 0 5px 15px rgba(214, 41, 118, 0.4);
+}
+
+.redes-sociales a:nth-child(3):hover {
+    background: #00f2ea;
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: 0 5px 15px rgba(0, 242, 234, 0.4);
+}
+
+/* FORM INPUTS STYLES */
 .input-style {
     width: 100%;
-    padding: 12px 15px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #dddddd;
+    padding: 14px 18px;
+    border: 2px solid var(--gray-border);
+    border-radius: 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-    background-color: #ffffff;
+    background: var(--gray-light);
 }
 
 .input-style:focus {
-    border-color: #000000;
     outline: none;
+    border-color: var(--black);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 
-textarea.input-style {
-    resize: vertical;
+.input-style:hover {
+    border-color: var(--gray-dark);
 }
-.redes-sociales {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    width: 100%;
-    margin-top: 20px;
+
+/* STAT CARD FORM CONTAINER */
+.stat-card form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--black-mate);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
-.hero-stats {
-            display: flex !important;         
-            flex-wrap: wrap;
-            justify-content: center;           
-            gap: 30px;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        .hero-stats .stat-card {
-            flex: 0 1 280px;                
-            max-width: 320px;
-            text-align: center;
-            background: #ffffff;
-            padding: 30px 20px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hero-stats .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
-        }
-
-        .hero-stats .stat-card i {
-            font-size: 2rem;
-            color: #000;
-            margin-bottom: 15px;
-        }
-
-        .hero-stats .stat-card h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #111;
-        }
-
-        .hero-stats .stat-card p {
-            font-size: 0.95rem;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 768px) {
-            .hero-stats {
-                gap: 20px;
-            }
-            .hero-stats .stat-card {
-                flex: 0 1 100%;
-                max-width: 350px;
-            }
-        }
-
-         .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-        }
-
-        /* El buscador ocupa el espacio central y se centra */
-        .search-container {
-            flex: 1;
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        /* Ajuste para que el logo y el botón menú no se muevan */
-        .header-container .logo {
-            flex-shrink: 0;
-            margin-right: 0;
-        }
-
-        .menu-toggle {
-            flex-shrink: 0;
-        }
-
-        /* En móviles el buscador ocupa todo el ancho disponible */
-        @media (max-width: 768px) {
-            .header-container {
-                display: grid;
-                grid-template-columns: auto 1fr auto;
-                gap: 8px;
-            }
-            .search-container {
-                margin: 0;
-                max-width: 100%;
-            }
-        }

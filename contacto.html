@@ -6,7 +6,7 @@
     <title>Contacto | Barber Shop</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header class="header">
@@ -42,24 +42,26 @@
                 <div class="split-container" style="gap: 50px;">
                     <div class="split-text">
                         <div class="stat-card" style="text-align: left; padding: 30px;">
-                            <form action="#">
+                            <form id="contactForm">
                                 <div style="margin-bottom: 15px;">
                                     <label>Nombre Completo</label>
-                                    <input type="text" class="input-style" required placeholder="Tu nombre">
+                                    <input type="text" id="contactNombre" class="input-style" required placeholder="Tu nombre">
                                 </div>
                                 <div style="margin-bottom: 15px;">
                                     <label>Correo Electrónico</label>
-                                    <input type="email" class="input-style" required 
+                                    <input type="email" id="contactEmail" class="input-style" required 
                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                                            title="Por favor, introduce un correo válido con @" 
                                            placeholder="ejemplo@gmail.com">
                                 </div>
                                 <div style="margin-bottom: 20px;">
                                     <label>Mensaje (Máx. 200 caracteres)</label>
-                                    <textarea class="input-style" rows="4" required maxlength="200" 
+                                    <textarea id="contactMensaje" class="input-style" rows="4" required maxlength="200" 
                                               placeholder="Escribe tu consulta aquí..."></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary" style="width:100%">ENVIAR MENSAJE</button>
+                                <button type="submit" class="btn btn-primary" style="width:100%">
+                                    <i class="fab fa-whatsapp"></i> ENVIAR POR WHATSAPP
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -70,6 +72,7 @@
                             <div class="info-detalles">
                                 <h4>Teléfono</h4>
                                 <p>+52 7299 63 5417</p>
+                                <a href="https://wa.me/527299635417" target="_blank" class="contact-btn-wa">Enviar WhatsApp</a>
                             </div>
                         </div>
 
@@ -77,7 +80,8 @@
                             <i class="fas fa-envelope"></i>
                             <div class="info-detalles">
                                 <h4>Email</h4>
-                                <p>barberstyledrinks@gmail.com</p>
+                                <p>barber@gmail.com</p>
+                                <a href="mailto:barber@gmail.com" class="contact-btn-email">Enviar correo</a>
                             </div>
                         </div>
 
@@ -86,13 +90,14 @@
                             <div class="info-detalles">
                                 <h4>Reservaciones</h4>
                                 <p>Atención con cita previa para garantizar tu espacio.</p>
+                                <a href="https://calendar.app.google/ysaZC8uKMBFZfemN9" target="_blank" class="contact-btn-calendar">Agendar cita</a>
                             </div>
                         </div>
                         
                         <div class="redes-sociales" style="margin-top: 20px;">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.facebook.com/barberstyledrinks" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/barberstyledrinks" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@barberstyledrinks" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
@@ -106,6 +111,12 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="assets/js/security.js"></script>
+    <script src="assets/js/crud-helper.js"></script>
+    <script src="assets/js/dom-optimizer.js"></script>
+    <script src="assets/js/productos.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contacto.js"></script>
 </body>
 </html>
